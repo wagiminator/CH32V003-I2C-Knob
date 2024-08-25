@@ -80,9 +80,6 @@ If you have installed [Python3](https://www.pythontutorial.net/getting-started/i
 rvprog -f bin/i2c_knob.bin
 ```
 
-## Power Cycle Erase
-The firmware uses the MCU's sleep mode to save energy. However, this can make it impossible to reprogram the chip using the single-wire debug interface. If that happens, you will need to perform a power cycle erase ("unbrick") with your programming software. This is not necessary when using the Python tool [rvprog](https://pypi.org/project/rvprog/), as it automatically detects the issue and performs a power cycle on its own.
-
 # Operating Instructions
 The device has four 16-bit and two 8-bit registers that can be read and written. The 16-bit registers are signed and the least significant byte is always transmitted first. With each access (reading or writing), the registers are always transferred starting with the first in the following order:
 1. Encoder wheel value (16-bit)
